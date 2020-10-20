@@ -1,4 +1,5 @@
 let timeLeft;
+let timeTotal;
 let intervalID;
 let hour;
 let min;
@@ -9,6 +10,7 @@ const inputFieldMin = document.querySelector('#min');
 const inputFieldHH = document.querySelector('#hour');
 
 const buttonIcon = document.querySelector('.controllButton > img');
+const progressBar = document.querySelector('#progressBar');
 
 const alarm = new Audio('../sounds/alarm.mp3');
 
@@ -21,7 +23,8 @@ function countTimerDown() {
     timeLeft--;
 }
 
-function showTimeLeft() {
+function showTimeLeft() {    
+
     hour = Math.floor(timeLeft / 3600);
     min = Math.floor((timeLeft - hour * 3600) / 60);
     sec = timeLeft - hour * 3600 - min * 60;
@@ -29,9 +32,12 @@ function showTimeLeft() {
     inputFieldHH.value = hour;
     inputFieldMin.value = min;
     inputFieldSec.value = sec;
+
+    progressBar.style.width = `${(timeLeft / timeTotal) * 100}%`;
 }
 
 function setTimer() {
+
     if (inputFieldSec.value === '') {
         sec = 0;
     } else {
@@ -51,6 +57,7 @@ function setTimer() {
     }
 
     timeLeft = sec + min + hour;
+    timeTotal = timeLeft;
 }
 
 function timerStop() {
