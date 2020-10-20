@@ -23,120 +23,93 @@ body {
     background-color: var(--color-bg-side);
 }
 
-.container {
-    display: grid;
-    place-items: center;
-    width: 100%;
-    height: 100%;
-}
-
 .timer {
-    width: 240px;
-    height: 110px;
-    background-color: var(--color-bg);
-    color: var(--color-font);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    column-gap: var(--gap-size);
-    padding: var(--gap-size);
-    position: relative;
-    padding-bottom: 5px;
+    background-color: rgb(88, 88, 88);
+    width: 250px;
+    height: 80px;
+    display: grid;
+    grid-template: 40px 40px / 80px repeat(4, 1fr);
 }
-
-.timer::before {
-    content: url("../images/icon-trashcan.svg");
-    position: absolute;
-    Top: 5px;
-    Left: 5px;
-    height: 10px;
-    width: 10px;
-    cursor: pointer;
-}
-
-.timer::after {
-    content: url("../images/icon-add.svg");
-    position: absolute;
-    Top: 5px;
-    Right: 15px;
-    height: 10px;
-    width: 10px;
-}
-
-.controllButton {
-    width: 40px;
+.button {
+    grid-row: 1 / 3;
+    grid-column: 1 / 2;
     background: none;
     border: none;
-    padding: 0;
+    padding: 10px;
     cursor: pointer;
     outline: none;
 }
 
-.controllButton > img {
+.button > img {
     object-fit: cover;
     width: 100%;
     height: 100%;
 }
 
-.timer-content {
-    width: 150px;
-    display: grid;
-    grid-template: auto auto / auto auto auto;
-    row-gap: 5px;
-}
-
-.timer-name {
+.titel {
     color: var(--color-name-timer);
     margin: 0;
-    grid-row: 1 /2;
-    grid-column: 1 / 4;
-    text-align: center;
+    grid-row: 1 / 2;
+    grid-column: 2 / 5;
+    padding-left: 20px;
 }
 
-#sec, #hour, #min{
-    width: 2em;
-    height: 2em;
+.hour {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+}
+
+.hour::after {
+    content: 'h';
+    color: var(--color-name-timer);
+}
+
+#hour,
+#min,
+#sec {
+    width: 60%;
+    height: 100%;
+    text-align: end;
+    outline: none;
     border: none;
     background: none;
     color: var(--color-font);
 }
 
-.tag {
-    color: var(--color-name-timer);
+#hour::placeholder,
+#min::placeholder,
+#sec::placeholder {
+    color: var(--color-font);
 }
 
-.tag > input {
-    text-align: end;
-    outline: none;
-}
-
-#secTag {
-    grid-row: 2 /3;
+.min {
+    grid-row: 2 / 3;
     grid-column: 3 / 4;
 }
 
-#secTag::after{
-    content: "s";
+.min::after {
+    content: 'm';
+    color: var(--color-name-timer);
+}
+.sec {
+    grid-row: 2 / 3;
+    grid-column: 4 / 5;
 }
 
-#minTag {
-    grid-row: 2 /3;
-    grid-column: 2 / 3;
+.sec::after {
+    content: 's';
+    color: var(--color-name-timer);
 }
 
-#minTag::after {
-    content:"m";
+.trash {
+    grid-row: 2 / 3;
+    grid-column: 5 / 6;
+    display: grid;
+    place-items: center;
 }
-
-#hourTag {
-    grid-row: 2 /3;
-    grid-column: 1 / 2;
-}
-
-#hourTag::after{
-    content: "h";
-}
-
-.tag > input::placeholder {
-    color: var(--color-font);
+.more {
+    grid-row: 1 / 2;
+    grid-column: 5 / 6;
+    display: grid;
+    place-items: center;
 }

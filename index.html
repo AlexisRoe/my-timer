@@ -4,48 +4,39 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./css/style.css" />
-        <title>my-timer</title>
+        <title>Timer Concept</title>
     </head>
     <body>
-        <main class="container">
-            <article class="timer">
-                <button class="controllButton" onclick="button()">
-                    <img src="./images/icon-play-circle-white.svg" alt="start timer" />
-                </button>
-                <div class="timer-content">
-                    <h4 class="timer-name">Timer</h4>
-                    <div id="hourTag" class="tag">
-                        <input
-                            type="tel"
-                            id="hour"
-                            maxlength="2"
-                            pattern="[0-9][0-9]"
-                            placeholder="0"
-                        />
-                    </div>
-                    <div id="minTag" class="tag">
-                        <input
-                            type="tel"
-                            id="min"
-                            maxlength="2"
-                            pattern="[0-9][0-9]"
-                            placeholder="0"
-                        />
-                    </div>
-                    <div id="secTag" class="tag">
-                        <input
-                            type="tel"
-                            id="sec"
-                            name="sec"
-                            maxlength="2"
-                            pattern="[0-9][0-9]"
-                            placeholder="0"
-                        />
-                    </div>
-                </div>
-            </article>
-        </main>
-
+        <div class="timer">
+            <button class="controllButton button" onclick="button()">
+                <img src="./images/icon-play-circle-white.svg" alt="start timer" />
+            </button>
+            <div class="titel">
+                <h4 class="timer-name">Counter</h4>
+            </div>
+            <div class="hour tag">
+                <input type="tel" id="hour" maxlength="2" pattern="[0-9][0-9]" placeholder="0" />
+            </div>
+            <div class="min tag">
+                <input type="tel" id="min" maxlength="2" pattern="[0-9][0-9]" placeholder="0" />
+            </div>
+            <div class="sec tag">
+                <input
+                    type="tel"
+                    id="sec"
+                    name="sec"
+                    maxlength="2"
+                    pattern="[0-9][0-9]"
+                    placeholder="0"
+                />
+            </div>
+            <div class="more">
+                <img src="/images/icon-add.svg" alt="add more" />
+            </div>
+            <div class="trash">
+                <img src="/images/icon-trashcan.svg" alt="delete counter" />
+            </div>
+        </div>
         <script src="./js/app.js"></script>
     </body>
 </html>
