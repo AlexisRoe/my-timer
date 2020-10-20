@@ -7,6 +7,7 @@ let sec;
 const inputFieldSec = document.querySelector('#sec');
 const inputFieldMin = document.querySelector('#min');
 const inputFieldHH = document.querySelector('#hour');
+
 const buttonIcon = document.querySelector('.controllButton > img');
 
 const alarm = new Audio('../sounds/alarm.mp3');

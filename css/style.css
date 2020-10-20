@@ -31,8 +31,8 @@ body {
 }
 
 .timer {
-    width: 300px;
-    height: 150px;
+    width: 240px;
+    height: 110px;
     background-color: var(--color-bg);
     color: var(--color-font);
     display: flex;
@@ -40,10 +40,31 @@ body {
     align-items: center;
     column-gap: var(--gap-size);
     padding: var(--gap-size);
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.timer::before {
+    content: url("../images/icon-trashcan.svg");
+    position: absolute;
+    Top: 5px;
+    Left: 5px;
+    height: 10px;
+    width: 10px;
+    cursor: pointer;
+}
+
+.timer::after {
+    content: url("../images/icon-add.svg");
+    position: absolute;
+    Top: 5px;
+    Right: 15px;
+    height: 10px;
+    width: 10px;
 }
 
 .controllButton {
-    width: 80px;
+    width: 40px;
     background: none;
     border: none;
     padding: 0;
@@ -58,7 +79,7 @@ body {
 }
 
 .timer-content {
-    flex-grow: 1;
+    width: 150px;
     display: grid;
     grid-template: auto auto / auto auto auto;
     row-gap: 5px;
