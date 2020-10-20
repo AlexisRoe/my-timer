@@ -115,3 +115,7 @@ body {
 #hourTag::after{
     content: "h";
 }
+
+.tag > input::placeholder {
+    color: var(--color-font);
+}
